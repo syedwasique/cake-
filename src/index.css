@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-espresso: #1C110C;
+    --color-caramel: #B8793E;
+    --color-cream: #F7F1E8;
+    --color-gold: #C5A880;
+    --color-burgundy: #7A2E33;
+  }
+
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F7F1E8;
+    color: #1C110C;
+    position: relative;
+  }
+
+  /* Custom Slim Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1C110C;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #54382B;
+    border-radius: 4px;
+    border: 1px solid #C5A880;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B8793E;
+  }
+}
+
+/* Cinematic Film Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Elegant Text Shimmer */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E3C3 0%, #C5A880 50%, #B8793E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.caramel-gradient-text {
+  background: linear-gradient(135deg, #E2A66C 0%, #B8793E 60%, #7A481C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Delicate Gold Rule Line */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #C5A880 30%, #C5A880 70%, transparent 100%);
+  opacity: 0.45;
+}
+
+/* Custom Cursor Hide Default */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Smooth Focus State for Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #C5A880;
+  outline-offset: 3px;
+}
